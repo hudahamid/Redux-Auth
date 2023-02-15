@@ -1,4 +1,4 @@
-intialState= {
+const intialState= {
     loading:false,
     currentUser:null,
     error:null,
