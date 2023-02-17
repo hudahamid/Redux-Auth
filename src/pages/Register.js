@@ -1,6 +1,7 @@
 import React , {useState,useEffect} from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
+import { registerIntiate } from '../redux/action';
 
 const Register = () => {
   const {state,setState}=useState({
@@ -9,10 +10,30 @@ const Register = () => {
    password:"",
    passwordConfrim:"",
    })
-   const {email,password,displayName,passwordConfrim}=useState;
+   const { currentUser } = useSelector((state)=> state.user);
+  const {email,password,displayName,passwordConfrim}=useState;
    
-  const handleSubmit= ()=>{}
- const handleChange= ()=>{}
+  const history= useHistory();
+  useEffect(()=>{
+    if(currentUser){
+      history.push("/")
+    }
+  },[currentUser , history]);
+  const dispatch=useDispatch();
+
+  const handleSubmit= (e)=>{
+  e.preventDefault();
+  if(password !== passwordConfrim){
+    return;
+  }
+  dispatch(registerIntiate (email, password,displayName));
+  setState({email:"", displayName:"", password:"",passwordConfrim:""})
+  }
+
+ const handleChange= (e)=>{
+  let {name,value}=e.target;
+  setState({...state,[name]:value})
+ }
    
    return (
     <div>
