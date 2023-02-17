@@ -1,14 +1,13 @@
-
 import React , {useState,useEffect} from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
 const Login = () => {
-  // const [state,useState]=useState({
-  //   email:"",
-  //   password:"",
-  // })
-  // const {email,password}=state;
+  const [state,setState]=useState({
+    email:"",
+    password:"",
+  })
+  const {email,password}=state;
   const handleSubmit= ()=>{}
  const handleChange= ()=>{}
    const handleGoogleSignIn= ()=>{}
@@ -36,7 +35,7 @@ const Login = () => {
             placeholder='EmailAddress'
             name='email'
             onChange={handleChange}
-            //value={email}
+            value={email}
             required
              />
              <input 
@@ -45,7 +44,7 @@ const Login = () => {
             placeholder='Password'
             name='password'
              onChange={handleChange}
-            //value={password}
+            value={password}
             required
              />
              <button type='submit'>sign In</button>

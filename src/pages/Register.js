@@ -3,39 +3,38 @@ import { useDispatch,useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
 const Register = () => {
-  // const [state,useState]=useState({
-  //   email:"",
-  //   password:"",
-  // })
-  // const {email,password}=state;
+  const {state,setState}=useState({
+  displayName:"",
+    email:"",
+   password:"",
+   passwordConfrim:"",
+   })
+   const {email,password,displayName,passwordConfrim}=useState;
+   
   const handleSubmit= ()=>{}
  const handleChange= ()=>{}
-   const handleGoogleSignIn= ()=>{}
-   const handleFBSignIn= ()=>{}
+   
    return (
     <div>
       <div id='logreg-from'>
         <form className='form-signin' onSubmit={handleSubmit}>
            <h1>Register</h1>
            <div>
-             <button type='button' onClick={handleGoogleSignIn}>
-              <span>
-                <i className='fab fa-google-plus-g '>sign in with google</i>
-              </span>
-             </button>
-             <button type='button' onClick={handleFBSignIn}>
-              <span>
-                <i className='fab fa-google-plus-g '>sign in with Facebook</i>
-              </span>
-             </button>
-             <p>or</p>
+           <input 
+             type='text'
+             placeholder='Full Name'
+            name='displayName'
+            onChange={handleChange}
+            value={displayName}
+            required
+             />
              <input 
              type='email'
             id='inputEmail'
             placeholder='EmailAddress'
             name='email'
             onChange={handleChange}
-            //value={email}
+            value={email}
             required
              />
              <input 
@@ -44,14 +43,22 @@ const Register = () => {
             placeholder='Password'
             name='password'
              onChange={handleChange}
-            //value={password}
+            value={password}
             required
              />
-             <button type='submit'>sign In</button>
-             <hr/>
-             <p>Don't have account</p>
-             <Link to='/register'> 
-              <button type='submit'>sign Up new account</button>
+             <input 
+             type='password'
+            id='inputpassword'
+            placeholder=' Confrim Password'
+            name='passwordConfrim'
+             onChange={handleChange}
+            value={passwordConfrim}
+            required
+             />
+             <button type='submit'>sign Up</button>
+             
+             <Link to='/login'> 
+              <button type='submit'>Back</button>
              </Link>
            </div>
         </form>
