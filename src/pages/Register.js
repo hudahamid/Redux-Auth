@@ -1,6 +1,6 @@
 import React , {useState,useEffect} from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import { Link, useHistory} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { registerIntiate } from '../redux/action';
 
 const Register = () => {
@@ -13,7 +13,7 @@ const Register = () => {
    const { currentUser } = useSelector((state)=> state.user);
   const {email,password,displayName,passwordConfrim}=useState;
    
-  const history= useHistory();
+  const history= useNavigate();
   useEffect(()=>{
     if(currentUser){
       history.push("/")
@@ -30,7 +30,7 @@ const Register = () => {
   setState({email:"", displayName:"", password:"",passwordConfrim:""})
   }
 
- const handleChange= (e)=>{
+ const handleChange= (e) => {
   let {name,value}=e.target;
   setState({...state,[name]:value})
  }
