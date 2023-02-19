@@ -1,3 +1,5 @@
+import * as types from "./actionType"
+
 const intialState= {
     loading:false,
     currentUser:null,
@@ -6,8 +8,26 @@ const intialState= {
 
 const userReducer=(state=intialState,action) =>{
     switch(action.type){
-        default:
-        return state
+      case types.REGISTER_START:
+        return{
+            ...state,
+            loading:true,
+        };
+        case types.REGISTER_SUCCESS:
+            return{
+                ...state,
+                loading:false, 
+                currentUser:action.payload,
+            };
+            
+            case types.REGISTER_FAIL:
+                return{
+                    ...state,
+                    loading:false, 
+                    error:action.payload,    
+                };
+             default:
+               return state;
     }
 }
 
