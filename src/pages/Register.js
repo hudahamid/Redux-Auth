@@ -1,9 +1,8 @@
 import React , {useState,useEffect} from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+
 import { useDispatch,useSelector } from 'react-redux';
 import { Link, useNavigate} from 'react-router-dom';
 import { registerIntiate } from '../redux/action';
-// import { createUserWithEmailAndPassword } from "firebase/auth";
 
 
 const Register = () => {
