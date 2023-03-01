@@ -5,12 +5,12 @@ import 'firebase/auth'
 import { getAuth, GoogleAuthProvider,FacebookAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCKy0rvhLWMWcn35iXCPxFFZPEAP3xQy9s",
-  authDomain: "online-project-2-fe518.firebaseapp.com",
-  projectId: "online-project-2-fe518",
-  storageBucket: "online-project-2-fe518.appspot.com",
-  messagingSenderId: "837949620562",
-  appId: "1:837949620562:web:872e5e4317201389957a8b"
+  apiKey: "AIzaSyBf_x8DlNKU-OhBeQw9rw24TF-A5H5gJzg",
+  authDomain: "reduxauth-19f3d.firebaseapp.com",
+  projectId: "reduxauth-19f3d",
+  storageBucket: "reduxauth-19f3d.appspot.com",
+  messagingSenderId: "495439937302",
+  appId: "1:495439937302:web:e119f17414be2f9d071a37"
 };
 
 // Initialize Firebase
