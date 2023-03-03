@@ -6,7 +6,7 @@ const intialState= {
     error:null,
 }
 
-const userReducer=(state=intialState,action) =>{
+const userReducer=(state=intialState , action) =>{
     switch(action.type){
         case types.REGISTER_START:
             case types.LOGIN_START:
@@ -29,13 +29,16 @@ const userReducer=(state=intialState,action) =>{
 
                 }
             case types.REGISTER_FAIL:
+                case types.LOGIN_FAIL :
+                        case types.LOGOUT_FAIL :
                 return{
                     ...state,
                     loading:false, 
                     error:action.payload,    
                 };
              default:
-               return state;
+               return (state )
+                   
     }
 };
 

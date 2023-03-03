@@ -15,12 +15,12 @@ const Register = () => {
    const { currentUser } = useSelector(state=> state.user);
   const {email,password,displayName,passwordConfrim}=useState;
    
-  const history= useNavigate();
+  const navigate = useNavigate();
   useEffect(()=>{
     if(currentUser){
-      history.push("/")
+      navigate('/');
     }
-  },[currentUser , history]);
+  },[currentUser , navigate]);
   const dispatch=useDispatch();
 
   const handleSubmit= (e)=>{
